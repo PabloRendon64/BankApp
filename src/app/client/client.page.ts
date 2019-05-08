@@ -4,7 +4,6 @@ import { ToastService } from "../services/toast.service";
 import { Client } from "../models/client.model";
 import { ClientsService } from "../services/clients.service";
 import {catchError, tap, map} from 'rxjs/operators';
-import { AngularFireList } from 'angularfire2/database';
 
 @Component({
   selector: "app-client",

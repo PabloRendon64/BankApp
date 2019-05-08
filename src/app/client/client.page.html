@@ -1,35 +1,29 @@
 <ion-header color="color5">
-  <ion-toolbar color="color5">
-    <ion-title color="color5">Registrar cliente</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="color5">
+        <ion-title color="color5">Registrar cliente</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content color="color3">
-  <form #clientForm='ngForm' (ngSubmit)="save()">
-    <ion-item color="color4">
-      <ion-label position="floating">Identificación</ion-label>
-      <ion-input type="text" maxlength="10" [(ngModel)]="client.identification" name='identification'
-        placeholder='Ingrese su número de identificación' 
-        onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'></ion-input>
-    </ion-item>
-    <ion-item color="color4">
-      <ion-label position="floating">Nombres</ion-label>
-      <ion-input type="text" [(ngModel)]="client.firstname" name='firstname'
-        placeholder='Ingrese sus nombres' required></ion-input>
-    </ion-item>
-    <ion-item color="color4">
-      <ion-label position="floating">Apellidos</ion-label>
-      <ion-input type="text" [(ngModel)]="client.lastname" name='lastname'
-        placeholder='Ingrese sus apellidos' required></ion-input>
-    </ion-item>
-    <ion-item color="color4">
-      <ion-label position="floating">Fecha de nacimiento</ion-label>
-      <ion-input type="date" [(ngModel)]="client.birthdate" name='birthdate'
-        max="{{fechaMax | date:'yyyy-MM-dd'}}"
-        placeholder='' required></ion-input>
-    </ion-item>
-    <div class="row" text-center>
-      <ion-button color="color1" type='submit' [disabled]='!clientForm.valid'>Registrar</ion-button>
-    </div>
-  </form>
+    <form #clientForm='ngForm' (ngSubmit)="save()">
+        <ion-item color="color4">
+            <ion-label position="floating">Identificación</ion-label>
+            <ion-input type="tel" maxlength="10" [(ngModel)]="client.identification" name='identification' placeholder='Ingrese su número de identificación'></ion-input>
+        </ion-item>
+        <ion-item color="color4">
+            <ion-label position="floating">Nombres</ion-label>
+            <ion-input type="text" [(ngModel)]="client.firstname" name='firstname' placeholder='Ingrese sus nombres' required></ion-input>
+        </ion-item>
+        <ion-item color="color4">
+            <ion-label position="floating">Apellidos</ion-label>
+            <ion-input type="text" [(ngModel)]="client.lastname" name='lastname' placeholder='Ingrese sus apellidos' required></ion-input>
+        </ion-item>
+        <ion-item color="color4">
+            <ion-label position="floating">Fecha de nacimiento</ion-label>
+            <ion-input type="date" [(ngModel)]="client.birthdate" name='birthdate' max="{{fechaMax | date:'yyyy-MM-dd'}}" placeholder='' required></ion-input>
+        </ion-item>
+        <div class="row" text-center>
+            <ion-button color="color1" type='submit' [disabled]='!clientForm.valid'>Registrar</ion-button>
+        </div>
+    </form>
 </ion-content>

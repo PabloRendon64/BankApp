@@ -6,7 +6,6 @@ import { environment } from 'src/environments/environment';
 import { Client } from '../models/client.model';
 //Shared Service
 import { HttpClientService } from './http-client.service';
-import { AngularFireList } from 'angularfire2/database';
 
 @Injectable({
   providedIn: 'root'
