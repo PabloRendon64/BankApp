@@ -1,0 +1,45 @@
+// http://ionicframework.com/docs/theming/
+@import "~@ionic/angular/css/core.css";
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.toast-error {
+  > div {
+    background-color: #f53d3d !important;
+  }
+}
+
+.toast-message {
+  color: white !important;
+}
+
+ion-content {
+  background-color: var(--ion-color-color4) !important;
+}
+
+ion-toolbar {
+  background-color: var(--ion-color-color4) !important;
+}
+
+ion-item {
+  background-color: var(--ion-color-color3) !important;
+}
+
+ion-tabs {
+  background-color: var(--ion-color-color2) !important;
+}
+
+ion-button {
+  background-color: var(--ion-color-color1) !important;
+}
+
+ion-text {
+  background-color: var(--ion-color-color1) !important;
+}

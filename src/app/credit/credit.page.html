@@ -1,0 +1,59 @@
+<ion-header color="color5">
+  <ion-toolbar color="color5">
+    <ion-title color="color5">Solicitud de crédito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="color3">
+  <form #creditForm='ngForm' (ngSubmit)="solicitar()" *ngIf="!solicitado">
+    <ion-item color="color5" text-center>
+      Para solicitar el crédito por favor llene el siguiente formulario:
+    </ion-item>
+    <ion-item color="color4">
+      <ion-label position="floating">Nombre de la empresa</ion-label>
+      <ion-input type="text" [(ngModel)]="credito.nombreEmpresa" name='nombreEmpresa'
+        placeholder='Ingrese el nombre de la empresa' required>
+      </ion-input>
+    </ion-item>
+    <ion-item color="color4">
+      <ion-label position="floating">NIT de la empresa</ion-label>
+      <ion-input type="text" maxlength="10" [(ngModel)]="credito.nit" name='nit'
+        placeholder='Ingrese el NIT de la empresa' required
+        onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'>
+      </ion-input>
+    </ion-item>
+    <ion-item color="color4">
+      <ion-label position="floating">Salario actual</ion-label>
+      <ion-input type="text" [(ngModel)]="credito.salario"
+        maxlength="8" name='salario'
+        onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'
+        placeholder='Ingrese su salario actual' required>
+      </ion-input>
+    </ion-item>
+    <ion-item color="color4">
+      <ion-label position="floating">Fecha de ingreso a la empresa</ion-label>
+      <ion-input type="date" [(ngModel)]="credito.fechaIngreso" name='fechaIngreso'
+        max="{{fechaActual | date:'yyyy-MM-dd'}}" placeholder='' required></ion-input>
+    </ion-item>
+    <div class="row" text-center>
+      <ion-button color="color1" type='submit' [disabled]='!creditForm.valid'>Solicitar</ion-button>
+    </div>
+  </form>
+  <div *ngIf="solicitado">
+    <ion-item color="color3">
+      <ion-card  text-center>
+        <ion-card-header>
+          <ion-card-subtitle>Su crédito ha sido</ion-card-subtitle>
+          <ion-card-title>{{aprobado? 'Aprobado': 'Rechazado'}}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          {{respuesta}}
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <div class="row" text-center>
+      <ion-button color="color2" (click)='reset()'>Volver a diligenciar</ion-button>
+    </div>
+  </div>
+</ion-content>

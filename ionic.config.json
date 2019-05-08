@@ -1,0 +1,7 @@
+{
+  "name": "bank-api",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
